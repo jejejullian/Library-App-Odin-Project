@@ -1,0 +1,162 @@
+@use "sass:color"; 
+$blue: #2563eb;
+$red: #f44336;
+$green: #4caf50;
+$gray: #f1f5f9;
+$white: #ffffff;
+$text: #111827;
+$radius: 10px;
+$shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: $gray;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+  color: $text;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+// Card wrapper style
+.card {
+  background: $white;
+  padding: 2rem;
+  border-radius: $radius;
+  box-shadow: $shadow;
+}
+
+// === Form Style ===
+#book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  label {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  input,
+  select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: $radius;
+    font-size: 1rem;
+    transition: 0.2s ease;
+
+    &:focus {
+      border-color: $blue;
+      outline: none;
+    }
+  }
+
+  button {
+    align-self: flex-start;
+    background-color: $blue;
+    color: $white;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border: none;
+    border-radius: $radius;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: color.adjust($blue, $lightness: -10%); 
+    }
+  }
+}
+
+// === Table Style ===
+.table-container {
+  overflow-x: auto;
+}
+
+.table__items {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+
+  th,
+  td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f8fafc;
+  }
+
+  .status {
+    padding: 0.5rem;
+    border-radius: $radius;
+    font-weight: bold;
+
+    &--read {
+      background-color: rgba($green, 0.1);
+      color: $green;
+    }
+
+    &--notread {
+      background-color: rgba($red, 0.1);
+      color: $red;
+    }
+  }
+
+  .btn--delete {
+    background-color: $red;
+    color: $white;
+    padding: 0.5rem 1rem;
+    border-radius: $radius;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: color.adjust($red, $lightness: -10%); 
+    }
+  }
+}
+
+// === Responsive ===
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .table__items {
+    font-size: 0.85rem;
+
+    th,
+    td {
+      padding: 0.6rem;
+    }
+  }
+
+  #book-form button {
+    width: 100%;
+  }
+}

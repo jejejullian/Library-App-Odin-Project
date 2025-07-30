@@ -5,7 +5,7 @@ A simple web application built as part of [The Odin Project's](https://www.theod
 
 ## 🔗 Live Demo
 
-[Live Show Link Here](https://your-link.netlify.app) <!-- Ganti ini dengan link kamu -->
+[Live Show Link Here](https://jejejullian.github.io/Library-App-Odin-Project/)
 
 ## ✨ Features
 

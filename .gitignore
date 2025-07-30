@@ -1,14 +1,14 @@
-# Node.js
+# Node.js packages
 node_modules/
-package-lock.json
 
-# Sass output
-css/*.css
-css/*.css.map
-
-# VS Code
+# VS Code settings
 .vscode/
 
-#OS artifacts
+# Sass/SCSS cache
+.sass-cache/
+
+# MacOS
 .DS_Store
+
+# Windows
 Thumbs.db
